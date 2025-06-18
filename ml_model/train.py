@@ -35,10 +35,9 @@ accuracy = accuracy_score(y_test, y_pred)
 total_time = end_time - start_time
 latency_per_sample = total_time / X_test_vec.shape[0]
 
-
 # Output
-print(f"✅ Model Accuracy: {accuracy * 100:.2f}%")
-print(f"⏱️ Average Latency per Prediction: {latency_per_sample * 1000:.4f} ms")
+print(f"Model Accuracy: {accuracy * 100:.2f}%")
+print(f"Average Latency per Prediction: {latency_per_sample * 1000:.4f} ms")
 
 # Save with compression
 joblib.dump(model, 'ml_model/rf_model_compressed.pkl', compress=3)
